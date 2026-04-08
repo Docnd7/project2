@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>互動測驗｜排球與籃球傷害預防</title>
+  <style>
+    body {
+      font-family: "Microsoft JhengHei", sans-serif;
+      margin: 0;
+      background-color: #fdfdfd;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #e67e22;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #f39c12;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+    }
+    nav a:hover { text-decoration: underline; }
+    main {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .question {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-bottom: 25px;
+      border-left: 5px solid #e67e22;
+    }
+    .question h3 { margin-top: 0; font-size: 1.1em; }
+    .type-tag {
+      font-size: 0.8em;
+      background: #eee;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+    .option-item {
+      display: block;
+      margin: 10px 0;
+      cursor: pointer;
+    }
+    .feedback {
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 4px;
+      background: #f9f9f9;
+      display: none; /* 預設隱藏，交卷後顯示 */
+    }
+    .correct-text { color: #27ae60; font-weight: bold; }
+    .incorrect-text { color: #c0392b; font-weight: bold; }
+    
+    button {
+      padding: 12px 30px;
+      background-color: #e67e22;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background 0.3s;
+    }
+    button:hover { background-color: #d35400; }
+    button:disabled { background-color: #ccc; cursor: not-allowed; }
+
+    select { padding: 8px; margin-bottom: 20px; border-radius: 4px; }
+    #scoreSection {
+      margin-top: 40px;
+      padding: 30px;
+      background: #fff;
+      border: 2px solid #e67e22;
+      border-radius: 8px;
+      text-align: center;
+    }
+    input[type="text"] { padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>互動測驗｜排球與籃球傷害預防</h1>
+  <p>每次隨機出 10 題，挑戰你的專業知識！</p>
+</header>
+
+<nav>
+  <a href="index.html">首頁</a>
+  <a href="volleyball.html">排球專區</a>
+  <a href="basketball.html">籃球專區</a>
+  <a href="quiz.html">測驗問卷</a>
+  <a href="ranking.html">排行榜</a>
+</nav>
+
+<main>
+  <div style="text-align: center; margin-bottom: 30px;">
+    <label for="topicSelect"><strong>選擇測驗主題：</strong></label>
+    <select id="topicSelect">
+      <option value="volleyball">🏐 排球傷害預防</option>
+      <option value="basketball">🏀 籃球傷害預防</option>
+    </select>
+    <button onclick="renderQuiz()">重新產生測驗</button>
+  </div>
+
+  <div id="quizContainer"></div>
+
+  <div id="submitArea" style="text-align: center; margin-top: 20px;">
+    <button id="submitBtn" onclick="submitQuiz()">提交所有答案</button>
+  </div>
+
+  <div id="scoreSection" style="display:none;">
+    <h2>🎉 測驗完成！</h2>
+    <h3 id="scoreText" style="font-size: 1.5em; color: #e67e22;"></h3>
+    <div style="margin-top: 20px;">
+      <label>請輸入暱稱儲存成績：</label>
+      <input type="text" id="nickname" placeholder="你的名字" />
+      <button onclick="saveScore()">儲存並查看排行榜</button>
+    </div>
+  </div>
+</main>
+
+<script>
+const allQuestions = {
+  volleyball: [
+    { type: "single", question: "哪一個動作最容易造成腳踝扭傷？", options: ["攔網落地", "發球", "接發球", "站著不動"], answer: "攔網落地", explanation: "攔網落地時若踩到隊友或地面不穩，最容易造成腳踝內翻扭傷。" },
+    { type: "multi", question: "哪些方法有助於預防膝蓋傷害？", options: ["深蹲訓練", "護膝使用", "跳繩訓練", "穿拖鞋打球"], answer: ["深蹲訓練", "護膝使用", "跳繩訓練"], explanation: "強化下肢肌力與使用護具能有效預防膝傷。" },
+    { type: "truefalse", question: "熱敷適合用在急性扭傷。", options: ["對", "錯"], answer: "錯", explanation: "急性扭傷應使用冰敷，熱敷會加重腫脹。" },
+    { type: "single", question: "以下哪一項訓練最能強化落地穩定性？", options: ["仰臥起坐", "單腳平衡", "手指伸展", "肩部拉伸"], answer: "單腳平衡", explanation: "單腳平衡訓練能提升下肢穩定性。" },
+    { type: "multi", question: "預防肩膀傷害的有效方法有哪些？", options: ["肩胛穩定訓練", "外旋肌訓練", "核心訓練", "過度扣球"], answer: ["肩胛穩定訓練", "外旋肌訓練", "核心訓練"], explanation: "穩定肩膀與核心可減少扣球時的負擔。" },
+    { type: "truefalse", question: "護膝可以完全防止膝蓋受傷。", options: ["對", "錯"], answer: "錯", explanation: "護膝是輔助工具，仍需搭配肌力訓練。" },
+    { type: "single", question: "哪一項不是排球常見的慢性傷害？", options: ["肩夾擠症候群", "跳躍膝", "手指骨折", "腰椎疲勞"], answer: "手指骨折", explanation: "手指骨折屬於急性傷害。" },
+    { type: "multi", question: "正確的熱身內容應包含哪些？", options: ["動態伸展", "關節活動", "技術模擬", "長跑 10 公里"], answer: ["動態伸展", "關節活動", "技術模擬"], explanation: "熱身應以動態與專項動作為主。" },
+    { type: "truefalse", question: "只要有護具就可以忽略肌力訓練。", options: ["對", "錯"], answer: "錯", explanation: "護具不能取代肌肉本身的保護力。" },
+    { type: "single", question: "若隊友落地後腳踝腫脹，應該怎麼做？", options: ["立即熱敷", "繼續比賽", "冰敷並停止活動", "用力按摩"], answer: "冰敷並停止活動", explanation: "應立即冰敷並停止活動以防惡化。" }
+  ],
+  basketball: [
+    { type: "single", question: "籃球中哪個動作最容易導致膝蓋扭傷？", options: ["切入變向", "罰球", "傳球", "拍球"], answer: "切入變向", explanation: "切入變向時膝蓋承受大量剪力。" },
+    { type: "multi", question: "哪些訓練有助於預防籃球運動傷害？", options: ["核心訓練", "單腳平衡", "肩部穩定", "只打比賽"], answer: ["核心訓練", "單腳平衡", "肩部穩定"], explanation: "穩定性訓練能有效降低風險。" },
+    { type: "truefalse", question: "腳踝扭傷後應立即熱敷。", options: ["對", "錯"], answer: "錯", explanation: "應立即冰敷，熱敷會加劇出血腫脹。" },
+    { type: "single", question: "哪項訓練最能提升防守時的橫向穩定？", options: ["滑步訓練", "仰臥起坐", "手指操", "長跑"], answer: "滑步訓練", explanation: "滑步訓練能提升重心控制。" },
+    { type: "multi", question: "正確的落地技巧包含？", options: ["雙腳平均著地", "膝蓋微彎吸震", "腳跟直接撞擊", "膝蓋內夾"], answer: ["雙腳平均著地", "膝蓋微彎吸震"], explanation: "正確落地能透過肌肉吸收衝擊。" },
+    { type: "truefalse", question: "戴護踝就能 100% 保證不扭傷。", options: ["對", "錯"], answer: "錯", explanation: "護踝是支撐，動作正確與肌力才是關鍵。" },
+    { type: "single", question: "預防籃球選手下背痛的關鍵是？", options: ["核心訓練", "加強運球", "換新球鞋", "多喝開水"], answer: "核心訓練", explanation: "強健的核心能分擔脊椎壓力。" },
+    { type: "multi", question: "選擇籃球鞋時應注意？", options: ["良好的避震", "足弓支撐", "腳踝包覆性", "只看顏色好看"], answer: ["良好的避震", "足弓支撐", "腳踝包覆性"], explanation: "功能性對保護關節至關重要。" },
+    { type: "truefalse", question: "運動後的靜態伸展有助於肌肉恢復。", options: ["對", "錯"], answer: "對", explanation: "靜態伸展能放鬆緊繃肌肉。" },
+    { type: "single", question: "比賽中手指挫傷（折蘿蔔）應優先？", options: ["冰敷固定", "用力拔長", "繼續運球", "熱敷"], answer: "冰敷固定", explanation: "急性期應先冰敷並固定受傷手指。" }
+  ]
+};
+
+let currentQuizData = []; // 存儲目前畫面上這 10 題
+let userScore = 0;
+
+// 洗牌函數 (Fisher-Yates Shuffle)
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+const container = document.getElementById("quizContainer");
+const topicSelect = document.getElementById("topicSelect");
+
+window.onload = renderQuiz;
+
+function renderQuiz() {
+  const topic = topicSelect.value;
+  // 1. 從題庫隨機選 10 題
+  const shuffledQuestions = shuffle([...allQuestions[topic]]);
+  currentQuizData = shuffledQuestions.slice(0, 10);
+  
+  container.innerHTML = "";
+  document.getElementById("scoreSection").style.display = "none";
+  document.getElementById("submitBtn").disabled = false;
+
+  currentQuizData.forEach((q, index) => {
+    const div = document.createElement("div");
+    div.className = "question";
+    div.id = `qBlock_${index}`;
+
+    // 類型標籤
+    const typeLabel = q.type === "single" ? "單選" : q.type === "multi" ? "多選" : "是非";
+    
+    const title = document.createElement("h3");
+    title.innerHTML = `<span class="type-tag">${typeLabel}</span>${index + 1}. ${q.question}`;
+    div.appendChild(title);
+
+    // 2. 選項隨機化
+    const opts = shuffle([...q.options]);
+    
+    opts.forEach(opt => {
+      const label = document.createElement("label");
+      label.className = "option-item";
+      const inputType = q.type === "multi" ? "checkbox" : "radio";
+      label.innerHTML = `<input type="${inputType}" name="q${index}" value="${opt}"> ${opt}`;
+      div.appendChild(label);
+    });
+
+    // 解析區塊 (先隱藏)
+    const feedbackDiv = document.createElement("div");
+    feedbackDiv.className = "feedback";
+    feedbackDiv.id = `feedback_${index}`;
+    div.appendChild(feedbackDiv);
+
+    container.appendChild(div);
+  });
+  
+  window.scrollTo(0, 0);
+}
+
+function submitQuiz() {
+  userScore = 0;
+  
+  currentQuizData.forEach((q, index) => {
+    const feedbackDiv = document.getElementById(`feedback_${index}`);
+    const selectedInputs = document.querySelectorAll(`input[name="q${index}"]:checked`);
+    const selectedValues = Array.from(selectedInputs).map(i => i.value);
+    
+    let isCorrect = false;
+    if (q.type === "multi") {
+      isCorrect = selectedValues.length === q.answer.length && selectedValues.every(v => q.answer.includes(v));
+    } else {
+      isCorrect = selectedValues[0] === q.answer;
+    }
+
+    if (isCorrect) userScore++;
+
+    // 顯示反饋
+    feedbackDiv.style.display = "block";
+    const statusText = isCorrect ? '<span class="correct-text">✅ 答對了！</span>' : `<span class="incorrect-text">❌ 答錯了！</span>`;
+    const ansText = Array.isArray(q.answer) ? q.answer.join("、") : q.answer;
+    
+    feedbackDiv.innerHTML = `
+      ${statusText}<br>
+      <strong>正確答案：</strong> ${ansText}<br>
+      <strong>📘 解析：</strong> ${q.explanation}
+    `;
+  });
+
+  // 顯示分數
+  const scoreSection = document.getElementById("scoreSection");
+  const scoreText = document.getElementById("scoreText");
+  scoreSection.style.display = "block";
+  scoreText.textContent = `測驗得分：${userScore * 10} / 100 分`;
+  
+  document.getElementById("submitBtn").disabled = true;
+  scoreSection.scrollIntoView({ behavior: 'smooth' });
+}
+
+function saveScore() {
+  const nickname = document.getElementById("nickname").value.trim();
+  if (!nickname) { alert("請輸入暱稱！"); return; }
+
+  const record = {
+    name: nickname,
+    score: userScore * 10,
+    topic: topicSelect.value === "volleyball" ? "排球" : "籃球",
+    time: new Date().toLocaleString()
+  };
+
+  const data = JSON.parse(localStorage.getItem("quizRanking")) || [];
+  data.push(record);
+  data.sort((a, b) => b.score - a.score);
+  localStorage.setItem("quizRanking", JSON.stringify(data.slice(0, 10)));
+
+  alert("分數已儲存！將前往排行榜。");
+  window.location.href = "ranking.html";
+}
+</script>
+
+</body>
+</html>
