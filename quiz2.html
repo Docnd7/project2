@@ -97,15 +97,13 @@
 
 <header>
   <h1>互動測驗｜排球與籃球傷害預防</h1>
-  <p>每次隨機出 10 題，挑戰你的專業知識！</p>
 </header>
 
 <nav>
   <a href="index.html">首頁</a>
   <a href="volleyball.html">排球專區</a>
   <a href="basketball.html">籃球專區</a>
-  <a href="quiz.html">測驗問卷</a>
-  <a href="ranking.html">排行榜</a>
+  <a href="quiz2.html">測驗問卷</a>
 </nav>
 
 <main>
@@ -280,7 +278,7 @@ function saveScore() {
   data.sort((a, b) => b.score - a.score);
   localStorage.setItem("quizRanking", JSON.stringify(data.slice(0, 10)));
 
-  alert("分數已儲存！將前往排行榜。");
+  alert("無。");
   window.location.href = "ranking.html";
 }
 </script>
