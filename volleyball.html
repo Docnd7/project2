@@ -1,95 +1,29 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>排球專區｜傷害預防全攻略</title>
+  <title>排球專區｜傷害預防與測驗</title>
   <style>
-    body {
-      font-family: "Microsoft JhengHei", sans-serif;
-      margin: 0;
-      background-color: #fdfdfd;
-      color: #333;
-    }
-    header {
-      background-color: #e67e22;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    nav {
-      background-color: #f39c12;
-      display: flex;
-      justify-content: center;
-      padding: 10px 0;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 20px;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    main {
-      padding: 40px 20px;
-      max-width: 960px;
-      margin: auto;
-    }
-    section {
-      margin-bottom: 50px;
-    }
-    h2 {
-      color: #d35400;
-      border-bottom: 2px solid #f39c12;
-      padding-bottom: 5px;
-    }
-    ul {
-      padding-left: 20px;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 15px;
-    }
-    th, td {
-      border: 1px solid #ccc;
-      padding: 12px;
-      text-align: left;
-    }
-    th {
-      background-color: #f39c12;
-      color: white;
-    }
-    tr:nth-child(even) {
-      background-color: #f9f9f9;
-    }
-    .btn {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #e67e22;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      margin-top: 10px;
-    }
-    .btn:hover {
-      background-color: #cf711f;
-    }
-    footer {
-      background-color: #eee;
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-      color: #777;
-    }
+    body { font-family:"Microsoft JhengHei",sans-serif; margin:0; background:#fdfdfd; color:#333; }
+    header { background:#e67e22; color:#fff; padding:20px; text-align:center; }
+    nav { background:#f39c12; display:flex; justify-content:center; padding:10px; }
+    nav a { color:#fff; text-decoration:none; margin:0 20px; font-weight:bold; }
+    nav a:hover { text-decoration:underline; }
+    main { padding:40px 20px; max-width:900px; margin:auto; }
+    section { margin-bottom:40px; }
+    .question { background:#fff; padding:20px; border-radius:8px; box-shadow:0 0 5px rgba(0,0,0,0.1); margin-bottom:30px; }
+    .feedback { margin-top:10px; font-weight:bold; }
+    .correct { color:green; }
+    .incorrect { color:red; }
+    button { padding:10px 20px; background:#e67e22; color:#fff; border:none; border-radius:5px; cursor:pointer; margin-top:10px; }
+    #scoreSection { margin-top:40px; padding:20px; background:#f0f0f0; border-radius:8px; }
   </style>
 </head>
 <body>
   <header>
-    <h1>排球專區｜傷害預防全攻略</h1>
-    <p>從技巧、訓練到裝備，全面守護你的排球安全</p>
+    <h1>排球專區｜傷害預防與測驗</h1>
+    <p>學習排球常見傷害與正確預防方法</p>
   </header>
 
   <nav>
@@ -97,109 +31,103 @@
     <a href="volleyball.html">排球專區</a>
     <a href="basketball.html">籃球專區</a>
     <a href="quiz.html">測驗問卷</a>
+    <a href="ranking.html">排行榜</a>
   </nav>
 
   <main>
     <section>
-      <h2>動作技巧預防</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>技巧</th>
-            <th>預防重點</th>
-            <th>常見錯誤</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>起跳與落地</td>
-            <td>雙腳平均著地、膝蓋微彎吸震</td>
-            <td>單腳落地、膝蓋內夾</td>
-          </tr>
-          <tr>
-            <td>扣球動作</td>
-            <td>肩膀外展不過度、核心穩定</td>
-            <td>過度後仰、手臂過度旋轉</td>
-          </tr>
-          <tr>
-            <td>攔網手型</td>
-            <td>手指張開、手腕穩定</td>
-            <td>手指僵硬、手掌過度伸直</td>
-          </tr>
-          <tr>
-            <td>救球姿勢</td>
-            <td>膝蓋彎曲、重心低、核心出力</td>
-            <td>彎腰駝背、手臂僵硬</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section>
-      <h2>肌力與穩定訓練</h2>
+      <h2>📘 排球傷害預防知識</h2>
       <ul>
-        <li><strong>核心訓練：</strong>平板撐體、死蟲式，預防腰部與落地不穩</li>
-        <li><strong>下肢訓練：</strong>深蹲、弓箭步、單腳平衡，強化膝踝控制</li>
-        <li><strong>肩部穩定：</strong>彈力帶外旋、肩胛穩定訓練，預防肩夾擠</li>
-        <li><strong>手指靈活：</strong>彈力球握力、手指伸展，預防攔網扭傷</li>
+        <li>急性扭傷應立即冰敷並固定，避免熱敷。</li>
+        <li>跳躍膝可透過休息與足弓支撐墊減輕負擔。</li>
+        <li>落地時膝蓋內扣旋轉容易造成前十字韌帶受傷。</li>
+        <li>護膝主要作用是保護膝蓋前方避免跪地擦撞。</li>
+        <li>核心訓練能穩定脊椎並傳導力量，減少腰部傷害。</li>
       </ul>
     </section>
 
     <section>
-      <h2>裝備與場地安全</h2>
-      <ul>
-        <li>選擇避震性佳、抓地力強的排球鞋</li>
-        <li>高強度訓練時可配戴護踝、護膝輔助穩定</li>
-        <li>比賽前檢查場地是否乾燥、無障礙物</li>
-        <li>修剪指甲，避免攔網時甲床受傷</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>訓練與恢復原則</h2>
-      <ul>
-        <li>熱身順序：動態伸展 → 關節活動 → 技術模擬</li>
-        <li>避免連續高強度跳躍訓練，安排交叉訓練</li>
-        <li>運動後靜態伸展 10 分鐘，補充水分與蛋白質</li>
-        <li>監控疲勞：出現痠痛或動作變形應調整訓練量</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>錯誤迷思破解</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>迷思</th>
-            <th>正確觀念</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>熱敷可以處理所有痠痛</td>
-            <td>急性傷害應冰敷，熱敷僅適用慢性痠痛</td>
-          </tr>
-          <tr>
-            <td>護具戴越多越安全</td>
-            <td>護具是輔助，不能取代肌力與技術訓練</td>
-          </tr>
-          <tr>
-            <td>痠痛代表有練到</td>
-            <td>過度痠痛可能是動作錯誤或疲勞累積</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section>
-      <h2>互動測驗</h2>
-      <p>準備好了嗎？來挑戰看看你對排球傷害預防的了解程度！</p>
-      <a href="quiz.html#volleyball" class="btn">開始排球測驗 →</a>
+      <h2>🏐 排球傷害預防測驗</h2>
+      <div id="quizContainer"></div>
+      <button onclick="submitQuiz()">交卷</button>
+      <div id="scoreSection" style="display:none;">
+        <h3>🎉 測驗完成！</h3>
+        <p id="scoreText"></p>
+        <label>請輸入暱稱：</label>
+        <input type="text" id="nickname" placeholder="你的名字"/>
+        <button onclick="saveScore()">儲存分數並查看排行榜</button>
+      </div>
     </section>
   </main>
 
-  <footer>
-    © 2026 楷棠製作｜排球與籃球運動傷害預防學習平台
-  </footer>
+<script>
+  const volleyballQuestions = [
+    { q:"攔網落地時不慎踩到對手腳掌，導致腳踝翻船，當下首要處理為何？", options:["強迫走動復健","立即冰敷並固定","用力揉搓患部","繼續比賽"], answer:"立即冰敷並固定", explanation:"急性扭傷應立即冰敷並固定，避免加重傷勢。" },
+    { q:"長期跳躍導致膝蓋髕骨下方疼痛（跳躍者膝），初期自我照顧建議為何？", options:["增加跳躍訓練","穿著足弓支撐墊並適度休息","完全不動","只擦痠痛藥膏"], answer:"穿著足弓支撐墊並適度休息", explanation:"休息與支撐墊能減輕膝蓋負擔。" },
+    { q:"阿基里斯腱斷裂時，球員通常會感覺到什麼？", options:["膝蓋發軟","腳後跟像被踢到一樣","大腿抽筋","手指麻痺"], answer:"腳後跟像被踢到一樣", explanation:"阿基里斯腱斷裂常有被踢到的感覺。" },
+  ];
+
+  let selectedQuestions = [];
+  let score = 0;
+
+  function renderQuiz() {
+  
+    selectedQuestions = volleyballQuestions.sort(() => 0.5 - Math.random()).slice(0,10);
+    const container = document.getElementById("quizContainer");
+    container.innerHTML = "";
+    selectedQuestions.forEach((q, index) => {
+      const div = document.createElement("div");
+      div.className = "question";
+      const title = document.createElement("h3");
+      title.textContent = `${index+1}. ${q.q}`;
+      div.appendChild(title);
+      q.options.forEach(opt => {
+        const label = document.createElement("label");
+        label.innerHTML = `<input type="radio" name="q${index}" value="${opt}"> ${opt}`;
+        div.appendChild(label);
+        div.appendChild(document.createElement("br"));
+      });
+      container.appendChild(div);
+    });
+  }
+
+  function submitQuiz() {
+    score = 0;
+    selectedQuestions.forEach((q, index) => {
+      const selected = document.querySelector(`input[name="q${index}"]:checked`);
+      const div = document.querySelectorAll(".question")[index];
+      let feedback = document.createElement("div");
+      feedback.className = "feedback";
+      if (selected && selected.value === q.answer) {
+        score++;
+        feedback.textContent = "✅ 答對了！";
+        feedback.classList.add("correct");
+      } else {
+        feedback.textContent = `❌ 答錯了！正確答案是：${q.answer}`;
+        feedback.classList.add("incorrect");
+      }
+      const explain = document.createElement("div");
+      explain.textContent = `📘 說明：${q.explanation}`;
+      div.appendChild(feedback);
+      div.appendChild(explain);
+    });
+    document.getElementById("scoreSection").style.display = "block";
+    document.getElementById("scoreText").textContent = `你獲得 ${score} / ${selectedQuestions.length} 分`;
+  }
+
+  function saveScore() {
+    const nickname = document.getElementById("nickname").value.trim();
+    if (!nickname) { alert("請輸入暱稱！"); return; }
+    const record = { name:nickname, score:score, topic:"volleyball", time:new Date().toLocaleString() };
+    const key = "quizRanking";
+    const data = JSON.parse(localStorage.getItem(key)) || [];
+    data.push(record);
+    data.sort((a,b)=>b.score-a.score);
+    localStorage.setItem(key, JSON.stringify(data.slice(0,10)));
+    window.location.href = "ranking.html";
+  }
+
+  window.onload = renderQuiz;
+</script>
 </body>
 </html>
