@@ -119,11 +119,11 @@
   <div id="quizContainer"></div>
 
   <div id="submitArea" style="text-align: center; margin-top: 20px;">
-    <button id="submitBtn" onclick="submitQuiz()">提交所有答案並查看結果</button>
+    <button id="submitBtn" onclick="submitQuiz()">提交答案</button>
   </div>
 
   <div id="scoreSection" style="display:none;">
-    <h2>🎉 測驗完成！</h2>
+    <h2>測驗完成</h2>
     <p id="scoreText" style="font-size: 1.8em; color: #e67e22; font-weight: bold;"></p>
     <button onclick="renderQuiz()">再測一次</button>
   </div>
@@ -148,7 +148,7 @@ const allQuestions = {
     },
     {
       type: "multi",
-      question: "哪些方法有助於預防膝蓋傷害？(多選)",
+      question: "哪些方法有助於預防膝蓋傷害？",
       options: ["深蹲訓練", "護膝使用", "跳繩訓練", "穿拖鞋打球"],
       answer: ["深蹲訓練", "護膝使用", "跳繩訓練"],
       explanation: "強化下肢肌力與使用護具能有效預防膝傷，穿拖鞋則缺乏保護力。"
@@ -169,7 +169,7 @@ const allQuestions = {
     },
     {
       type: "multi",
-      question: "預防肩膀傷害的有效方法有哪些？(多選)",
+      question: "預防肩膀傷害的有效方法有哪些？",
       options: ["肩胛穩定訓練", "外旋肌訓練", "核心訓練", "減少熱身時間"],
       answer: ["肩胛穩定訓練", "外旋肌訓練", "核心訓練"],
       explanation: "穩定的肩關節與核心力量可減少扣球時的過度負擔。"
@@ -190,7 +190,7 @@ const allQuestions = {
     },
     {
       type: "multi",
-      question: "正確的運動熱身應該包含？(多選)",
+      question: "正確的運動熱身應該包含？",
       options: ["動態伸展", "關節活動", "技術模擬", "長坐不休"],
       answer: ["動態伸展", "關節活動", "技術模擬"],
       explanation: "熱身應以讓身體「熱起來」並模擬運動動作為主。"
@@ -222,7 +222,7 @@ const allQuestions = {
     },
     {
       type: "multi",
-      question: "籃球鞋的選購重點包括哪些？(多選)",
+      question: "籃球鞋的選購重點包括哪些？",
       options: ["優良的避震性", "足夠的腳踝包覆", "防滑鞋底", "只要顏色漂亮"],
       answer: ["優良的避震性", "足夠的腳踝包覆", "防滑鞋底"],
       explanation: "良好的機能鞋能緩衝跳躍著地時的衝擊並保護踝關節。"
@@ -243,7 +243,7 @@ const allQuestions = {
     },
     {
       type: "multi",
-      question: "正確的跳躍落地技巧應注意？(多選)",
+      question: "正確的跳躍落地技巧應注意？",
       options: ["雙腳平均著地", "膝蓋微彎緩衝", "避免膝蓋內扣", "直腿落地"],
       answer: ["雙腳平均著地", "膝蓋微彎緩衝", "避免膝蓋內扣"],
       explanation: "落地時保持膝蓋對準腳尖並微彎，能最有效吸收衝擊力。"
@@ -264,7 +264,7 @@ const allQuestions = {
     },
     {
       type: "multi",
-      question: "預防籃球運動傷害，日常可以做？(多選)",
+      question: "預防籃球運動傷害，日常可以做？",
       options: ["重量訓練", "本體感覺平衡訓練", "充足的睡眠", "只打比賽不訓練"],
       answer: ["重量訓練", "本體感覺平衡訓練", "充足的睡眠"],
       explanation: "強壯的身體與充足的修復是預防傷害的基礎。"
