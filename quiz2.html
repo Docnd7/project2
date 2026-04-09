@@ -428,10 +428,7 @@ function submitQuiz() {
     
     feedbackDiv.innerHTML = `
       ${status}<br>
-      <strong>正確答案：</strong> ${ans}<br>
-      <strong>說明：</strong> ${q.explanation}
-    `;
-  });
+      <strong>正確答案：</strong> ${ans}<br>;});
 
   document.getElementById("scoreText").textContent = `您的總分：${userScore * 10} 分 / 100 分`;
   scoreSection.style.display = "block";
