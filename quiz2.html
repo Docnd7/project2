@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
@@ -132,220 +131,208 @@
 <script>
 /**
  * ==========================================
- * type: "single" (單選), "multi" (多選), "truefalse" (是非)
+ * 題庫區 (之後修改只需更動這裡的內容)
  * ==========================================
  */
 const allQuestions = {
-  // --- 排球題庫 ---
   volleyball: [
-     {
+    {
       type: "single",
       question: "攔網落地時不慎踩到對手腳掌，導致腳踝「翻船」，當下首要處理為何？",
       options: ["強迫走動復健", "立即冰敷並固定", "用力揉搓患部", "繼續比賽"],
-      answer: "立即冰敷並固定",
+      answer: "立即冰敷並固定"
     },
     {
       type: "single",
       question: "長期跳躍導致膝蓋髕骨下方疼痛（跳躍者膝），初期自我照顧建議為何？",
       options: ["增加跳躍訓練", "穿著足弓支撐墊並適度休息", "完全不動", "只擦痠痛藥膏"],
-      answer: "穿著足弓支撐墊並適度休息",
+      answer: "穿著足弓支撐墊並適度休息"
     },
     {
       type: "single",
       question: "發生急性踝關節扭傷後，PRICE 原則中的「C」代表什麼？",
       options: ["休息", "壓迫包紮", "抬高", "清潔"],
-      answer: "壓迫包紮",
+      answer: "壓迫包紮"
     },
     {
       type: "single",
       question: "排球員常有的小腿後側肌肉拉傷（網球腿），最常發生在什麼動作？",
       options: ["舉球", "扣球起跳或發力瞬間", "觀察球路", "喊聲喊應"],
-      answer: "扣球起跳或發力瞬間",
+      answer: "扣球起跳或發力瞬間"
     },
     {
       type: "single",
       question: "哪一個動作最容易造成腳踝扭傷？",
       options: ["攔網落地", "發球", "接發球", "站著不動"],
-      answer: "攔網落地",
+      answer: "攔網落地"
     },
     {
       type: "single",
       question: "預防踝關節再次扭傷，復健時最應加強哪種訓練？",
       options: ["臂力", "本體感覺與平衡訓練", "肺活量", "柔軟度"],
-      answer: "本體感覺與平衡訓練",
+      answer: "本體感覺與平衡訓練"
     },
     {
       type: "single",
       question: "足踝嚴重扭傷後，應何時尋求醫師檢查？",
       options: ["腳趾變黑", "無法負重行走或骨頭壓痛明顯", "一個月後", "永遠不需要"],
-      answer: "無法負重行走或骨頭壓痛明顯",
+      answer: "無法負重行走或骨頭壓痛明顯"
     },
-     {
+    {
       type: "single",
       question: "發生大腿抽筋（肌肉痙攣）時，應如何處理？",
       options: ["快速拍打肌肉", "緩慢持續地伸展該肌肉", "立即熱敷", "停止喝水"],
-      answer: "緩慢持續地伸展該肌肉",
+      answer: "緩慢持續地伸展該肌肉"
     },
     {
       type: "single",
       question: "護膝在排球運動中的主要作用是？",
       options: ["增加跳躍力", "保護膝關節前方避免跪地擦撞傷", "治療韌帶斷裂", "裝飾"],
-      answer: "保護膝關節前方避免跪地擦撞傷",
+      answer: "保護膝關節前方避免跪地擦撞傷"
     },
     {
       type: "single",
       question: "在高溫球場打球出現大量出汗、頭暈，可能是？",
       options: ["熱衰竭", "骨折", "胃痛", "中暑"],
-      answer: "熱衰竭",
+      answer: "熱衰竭"
+    },
+    {
+      type: "single",
+      question: "比賽中因碰撞導致鼻血流不止，頭部應？",
+      options: ["往後仰", "保持正常位置微前傾並壓迫鼻翼", "左右搖晃", "中暑"],
+      answer: "保持正常位置微前傾並壓迫鼻翼"
+    },
+    {
+      type: "single",
+      question: "手肘外側疼痛（網球肘），在排球中常因什麼動作造成？",
+      options: ["低手接球過度用力發力", "舉球員攔網時手指戳到", "救球跌倒", "以上皆非"],
+      answer: "低手接球過度用力發力"
+    },
+    {
+      type: "single",
+      question: "排球攻擊手常見的肩部受傷稱為？",
+      options: ["旋轉肌袖損傷", "腕隧道症候群", "網球肘", "扳機指"],
+      answer: "旋轉肌袖損傷"
+    },
+    {
+      type: "single",
+      question: "預防手指挫傷，可以採用哪種貼紮？",
+      options: ["螺旋貼法", "雙指固定法（鄰指固定）", "交叉貼法", "隨便貼"],
+      answer: "雙指固定法（鄰指固定）"
+    },
+    {
+      type: "single",
+      question: "關於急性傷害處理的「POLICE」原則，P 代表？",
+      options: ["忍耐", "保護", "力量", "跑步"],
+      answer: "保護"
+    },
+    {
+      type: "single",
+      question: "運動後肌肉痠痛（DOMS）通常在多久後最明顯？",
+      options: ["10 分鐘", "24-48 小時", "一星期", "一個月"],
+      answer: "24-48 小時"
+    },
+    {
+      type: "single",
+      question: "排球防守時「魚躍」救球，若姿勢不當最易傷及？",
+      options: ["耳朵", "腰椎或下巴", "腳跟", "指甲"],
+      answer: "腰椎或下巴"
+    },
+    {
+      type: "single",
+      question: "長期重覆性跳躍若導致骨頭微細裂痕，稱為？",
+      options: ["壓迫性骨折", "疲勞性骨折", "複雜骨折", "粉碎性骨折"],
+      answer: "疲勞性骨折"
     },
     {
       type: "multi",
       question: "哪些方法有助於預防膝蓋傷害？",
       options: ["深蹲訓練", "護膝使用", "跳繩訓練", "穿拖鞋打球"],
       answer: ["深蹲訓練", "護膝使用", "跳繩訓練"],
-      explanation: "強化下肢肌力與使用護具能有效預防膝傷，穿拖鞋則缺乏保護力。"
+      explanation: "強化下肢肌力與使用護具能有效預防膝傷。"
     },
     {
       type: "truefalse",
       question: "急性扭傷發生的第一時間應該立刻熱敷。",
       options: ["對", "錯"],
       answer: "錯",
-      explanation: "急性扭傷應先冰敷以控制腫脹，熱敷會加重炎症。"
-    },
-    {
-      type: "single",
-      question: "以下哪一項訓練最能強化落地時的穩定性？",
-      options: ["仰臥起坐", "單腳平衡", "手指伸展", "肩部拉伸"],
-      answer: "單腳平衡",
-      explanation: "單腳平衡訓練能強化本體感覺，提升下肢穩定性。"
-    },
-    {
-      type: "multi",
-      question: "預防肩膀傷害的有效方法有哪些？",
-      options: ["肩胛穩定訓練", "外旋肌訓練", "核心訓練", "減少熱身時間"],
-      answer: ["肩胛穩定訓練", "外旋肌訓練", "核心訓練"],
-      explanation: "穩定的肩關節與核心力量可減少扣球時的過度負擔。"
-    },
-    {
-      type: "truefalse",
-      question: "只要戴上護膝，就可以完全防止膝蓋受傷。",
-      options: ["對", "錯"],
-      answer: "錯",
-      explanation: "護膝是輔助，仍需正確的動作技術與肌力支持。"
-    },
-    {
-      type: "single",
-      question: "哪一項不是排球常見的「慢性」傷害？",
-      options: ["肩夾擠症候群", "跳躍膝", "手指骨折", "腰椎疲勞"],
-      answer: "手指骨折",
-      explanation: "手指骨折通常是意外撞擊導致的「急性」傷害。"
-    },
-    {
-      type: "multi",
-      question: "正確的運動熱身應該包含？",
-      options: ["動態伸展", "關節活動", "技術模擬", "長坐不休"],
-      answer: ["動態伸展", "關節活動", "技術模擬"],
-      explanation: "熱身應以讓身體「熱起來」並模擬運動動作為主。"
-    },
-    {
-      type: "truefalse",
-      question: "為了省時間，打完球可以不用做收操伸展。",
-      options: ["對", "錯"],
-      answer: "錯",
-      explanation: "運動後伸展有助於肌肉放鬆與代謝廢物排除。"
-    },
-    {
-      type: "single",
-      question: "當手指發生「折蘿蔔」挫傷時，應優先採取？",
-      options: ["用力拔長", "持續轉動", "冰敷固定", "用力按摩"],
-      answer: "冰敷固定",
-      explanation: "應立即停止活動，採取冰敷並固定傷處。"
+      explanation: "急性扭傷應先冰敷以控制腫脹。"
     }
   ],
 
-  // --- 籃球題庫 ---
   basketball: [
     {
       type: "single",
       question: "籃球運動中，哪種動作對膝蓋十字韌帶壓力最大？",
       options: ["快速切入變向", "原地運球", "傳球", "罰球"],
       answer: "快速切入變向",
-      explanation: "急停與切入變向會產生強大的剪力，是膝蓋受傷的高風險動作。"
+      explanation: "急停與切入變向會產生強大的剪力。"
     },
     {
       type: "multi",
       question: "籃球鞋的選購重點包括哪些？",
       options: ["優良的避震性", "足夠的腳踝包覆", "防滑鞋底", "只要顏色漂亮"],
-      answer: ["優良的避震性", "足夠的腳踝包覆", "防滑鞋底"],
-      explanation: "良好的機能鞋能緩衝跳躍著地時的衝擊並保護踝關節。"
+      answer: ["優良的避震性", "足夠的腳踝包覆", "防滑鞋底"]
     },
     {
       type: "truefalse",
       question: "腳踝扭傷後，只要不痛了就可以馬上回場比賽。",
       options: ["對", "錯"],
       answer: "錯",
-      explanation: "不痛不代表韌帶已癒合，過早回場極易造成習慣性脫臼。"
+      explanation: "不痛不代表韌帶已癒合。"
     },
     {
       type: "single",
       question: "預防籃球運動中下背部疼痛的關鍵訓練是？",
       options: ["手指靈活訓練", "核心肌群訓練", "投籃練習", "折返跑"],
-      answer: "核心肌群訓練",
-      explanation: "強健的核心能穩定脊椎，減輕腰部受力。"
+      answer: "核心肌群訓練"
     },
     {
       type: "multi",
       question: "正確的跳躍落地技巧應注意？",
       options: ["雙腳平均著地", "膝蓋微彎緩衝", "避免膝蓋內扣", "直腿落地"],
-      answer: ["雙腳平均著地", "膝蓋微彎緩衝", "避免膝蓋內扣"],
-      explanation: "落地時保持膝蓋對準腳尖並微彎，能最有效吸收衝擊力。"
+      answer: ["雙腳平均著地", "膝蓋微彎緩衝", "避免膝蓋內扣"]
     },
     {
       type: "truefalse",
       question: "護踝可以完全取代腳踝本身的肌肉力量。",
       options: ["對", "錯"],
-      answer: "錯",
-      explanation: "護具是外在支撐，長期的腳踝穩定性仍須靠肌力訓練。"
+      answer: "錯"
     },
     {
       type: "single",
       question: "在場上跌倒手腕撐地受傷，應優先？",
       options: ["揉搓傷處", "冰敷並停止活動", "用力甩手", "繼續運球"],
-      answer: "冰敷並停止活動",
-      explanation: "手腕撐地易造成骨裂或韌帶撕裂，應立即冰敷並檢查。"
+      answer: "冰敷並停止活動"
     },
     {
       type: "multi",
       question: "預防籃球運動傷害，日常可以做？",
       options: ["重量訓練", "本體感覺平衡訓練", "充足的睡眠", "只打比賽不訓練"],
-      answer: ["重量訓練", "本體感覺平衡訓練", "充足的睡眠"],
-      explanation: "強壯的身體與充足的修復是預防傷害的基礎。"
+      answer: ["重量訓練", "本體感覺平衡訓練", "充足的睡眠"]
     },
     {
       type: "truefalse",
-      question: "運動前只做靜態拉筋（不動的伸展）就足夠了。",
+      question: "運動前只做靜態拉筋就足夠了。",
       options: ["對", "錯"],
-      answer: "錯",
-      explanation: "運動前應以「動態熱身」為主，靜態伸展反而可能降低肌肉爆發力。"
+      answer: "錯"
     },
     {
       type: "single",
       question: "籃球比賽中撞到頭部感到暈眩，應該？",
       options: ["休息一下繼續上場", "立刻停止活動並觀察有無腦震盪", "多喝糖水", "忍耐到比賽結束"],
-      answer: "立刻停止活動並觀察有無腦震盪",
-      explanation: "頭部外傷不可輕忽，暈眩可能是腦震盪徵兆，必須立即休息。"
+      answer: "立刻停止活動並觀察有無腦震盪"
     }
   ]
 };
 
 /** * ==========================================
- * 程式邏輯區 (請勿隨意修改)
+ * 程式邏輯區 (無需更動)
  * ==========================================
  */
 let currentQuizData = [];
 let userScore = 0;
 
-// 洗牌函數
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -363,7 +350,6 @@ window.onload = renderQuiz;
 
 function renderQuiz() {
   const topic = topicSelect.value;
-  // 隨機選 10 題並洗牌選項
   const shuffledQuestions = shuffle([...allQuestions[topic]]);
   currentQuizData = shuffledQuestions.slice(0, 10);
   
@@ -374,13 +360,11 @@ function renderQuiz() {
   currentQuizData.forEach((q, index) => {
     const div = document.createElement("div");
     div.className = "question";
-
     const typeLabel = q.type === "single" ? "單選" : q.type === "multi" ? "多選" : "是非";
     const title = document.createElement("h3");
     title.innerHTML = `<span class="type-tag">${typeLabel}</span>${index + 1}. ${q.question}`;
     div.appendChild(title);
 
-    // 選項洗牌
     const opts = shuffle([...q.options]);
     opts.forEach(opt => {
       const label = document.createElement("label");
@@ -390,12 +374,10 @@ function renderQuiz() {
       div.appendChild(label);
     });
 
-    // 解析容器
     const feedbackDiv = document.createElement("div");
     feedbackDiv.className = "feedback";
     feedbackDiv.id = `feedback_${index}`;
     div.appendChild(feedbackDiv);
-
     container.appendChild(div);
   });
   window.scrollTo(0, 0);
@@ -409,10 +391,6 @@ function submitQuiz() {
     const selectedInputs = document.querySelectorAll(`input[name="q${index}"]:checked`);
     const selectedValues = Array.from(selectedInputs).map(i => i.value);
     
-    if (selectedValues.length === 0) {
-      // 若沒選，預設當作沒選
-    }
-
     let isCorrect = false;
     if (q.type === "multi") {
       isCorrect = selectedValues.length === q.answer.length && selectedValues.every(v => q.answer.includes(v));
@@ -426,9 +404,14 @@ function submitQuiz() {
     const status = isCorrect ? '<span class="correct-text">✅ 正確</span>' : `<span class="incorrect-text">❌ 錯誤</span>`;
     const ans = Array.isArray(q.answer) ? q.answer.join("、") : q.answer;
     
-    feedbackDiv.innerHTML = `
-      ${status}<br>
-      <strong>正確答案：</strong> ${ans}<br>;});
+    let feedbackContent = `${status}<br><strong>正確答案：</strong> ${ans}`;
+    // 只有在有 explanation 時才顯示該行
+    if (q.explanation) {
+      feedbackContent += `<br><strong>說明：</strong> ${q.explanation}`;
+    }
+    
+    feedbackDiv.innerHTML = feedbackContent;
+  });
 
   document.getElementById("scoreText").textContent = `您的總分：${userScore * 10} 分 / 100 分`;
   scoreSection.style.display = "block";
