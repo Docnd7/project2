@@ -129,11 +129,7 @@
 </main>
 
 <script>
-/**
- * ==========================================
- * 題庫區 (之後修改只需更動這裡的內容)
- * ==========================================
- */
+
 const allQuestions = {
   volleyball: [
     {
@@ -429,10 +425,6 @@ const allQuestions = {
   ]
 };
 
-/** * ==========================================
- * 程式邏輯區 (無需更動)
- * ==========================================
- */
 let currentQuizData = [];
 let userScore = 0;
 
@@ -508,7 +500,6 @@ function submitQuiz() {
     const ans = Array.isArray(q.answer) ? q.answer.join("、") : q.answer;
     
     let feedbackContent = `${status}<br><strong>正確答案：</strong> ${ans}`;
-    // 只有在有 explanation 時才顯示該行
     if (q.explanation) {
       feedbackContent += `<br><strong>說明：</strong> ${q.explanation}`;
     }
