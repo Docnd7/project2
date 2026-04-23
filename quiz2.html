@@ -12,12 +12,7 @@
       color: #333;
       line-height: 1.6;
     }
-    header {
-      background-color: #e67e22;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
+    /* 1. 導覽列置頂 */
     nav {
       background-color: #f39c12;
       display: flex;
@@ -31,6 +26,14 @@
       font-weight: bold;
     }
     nav a:hover { text-decoration: underline; }
+
+    /* 2. 標題區移至下方 */
+    header {
+      background-color: #e67e22;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
     main {
       padding: 40px 20px;
       max-width: 900px;
@@ -94,16 +97,16 @@
 </head>
 <body>
 
-<header>
-  <h1>互動測驗｜運動傷害預防</h1>
-  <p>挑戰你的正確觀念，減少運動受傷風險！</p>
-</header>
-
 <nav>
   <a href="index.html">首頁</a>
   <a href="volleyball.html">排球專區</a>
   <a href="basketball.html">籃球專區</a>
 </nav>
+
+<header>
+  <h1>互動測驗｜運動傷害預防</h1>
+  <p>挑戰你的正確觀念，減少運動受傷風險！</p>
+</header>
 
 <main>
   <div style="text-align: center; margin-bottom: 30px;">
@@ -129,7 +132,7 @@
 </main>
 
 <script>
-
+// 腳本部分保持不變...
 const allQuestions = {
   volleyball: [
     {
@@ -413,13 +416,13 @@ const allQuestions = {
      {
       type: "single",
       question: "所謂「開放性骨折」是指？",
-      options: ["骨頭斷掉但皮膚完整 ", "  骨頭斷裂且穿破皮膚有傷口  ", "  只有肌肉痛 (  ", " 指甲裂開"],
+      options: ["骨頭斷掉但皮膚完整 ", "  骨頭斷裂且穿破皮膚有傷口  ", "  只有肌肉痛 ", " 指甲裂開"],
       answer: "  骨頭斷裂且穿破皮膚有傷口"
     },
        {
       type: "single",
       question: "良好的運動防護觀念應該是？",
-      options: ["痛了再說 ", "  受傷可以繼續打  ", "  預防勝於治療 (  ", " 依賴止痛藥 "],
+      options: ["痛了再說 ", "  受傷可以繼續打  ", "  預防勝於治療 ", " 依賴止痛藥 "],
       answer: "  預防勝於治療"
     },
   ]
