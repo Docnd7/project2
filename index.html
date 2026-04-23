@@ -11,71 +11,76 @@
       background-color: #fdfdfd;
       color: #333;
     }
-    /* 導覽列現在在最上方 */
     nav {
-      background-color: #f39c12;
+      background-color: #3498db;
       display: flex;
       justify-content: center;
-      padding: 10px 0;
+      padding: 15px 0;
     }
+    /* 最上方的文字調大 */
     nav a {
       color: white;
       text-decoration: none;
       margin: 0 20px;
       font-weight: bold;
-      font-size: 28px;
+      font-size: 32px; 
     }
     nav a:hover {
       text-decoration: underline;
     }
-    /* 標題區移至導覽列下方 */
     header {
-      background-color: #e67e22;
+      background-color: #2980b9;
       color: white;
-      padding: 20px;
+      padding: 30px 20px;
       text-align: center;
     }
+    /* 下方的標題調小後再放大一點點 (約 26px) */
     header h1 {
-      font-size: 20px; /* 數值越小，字就越小 */
+      font-size: 26px;
       margin: 0;
+    }
+    header p {
+      font-size: 16px;
+      margin-top: 10px;
     }
     main {
       padding: 40px 20px;
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
+      text-align: center;
     }
-    section {
+    .intro {
       margin-bottom: 40px;
-    }
-    h2 {
-      color: #d35400;
+      font-size: 18px;
     }
     .card-container {
       display: flex;
+      justify-content: space-around;
       flex-wrap: wrap;
-      gap: 20px;
     }
     .card {
-      flex: 1 1 300px;
-      background-color: #fff;
-      border: 1px solid #ddd;
-      border-radius: 8px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 300px;
       padding: 20px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      margin: 20px;
+      transition: transform 0.3s;
     }
-    .card h3 {
-      margin-top: 0;
-      color: #e67e22;
+    .card:hover {
+      transform: translateY(-10px);
     }
-    .card p {
-      margin-bottom: 10px;
+    .card h2 {
+      color: #2980b9;
     }
-    .card a {
+    .btn {
       display: inline-block;
-      margin-top: 10px;
-      color: #e67e22;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: white;
       text-decoration: none;
-      font-weight: bold;
+      border-radius: 5px;
     }
     footer {
       background-color: #eee;
