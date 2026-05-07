@@ -34,7 +34,7 @@
       padding: 30px 20px;
       text-align: center;
     }
-    /* 下方的標題調小後再放大一點點 (約 26px) */
+    /* 標題中大字 */
     header h1 {
       font-size: 33px;
       margin: 0;
@@ -48,10 +48,6 @@
       max-width: 1000px;
       margin: auto;
       text-align: center;
-    }
-    .intro {
-      margin-bottom: 40px;
-      font-size: 18px;
     }
     .card-container {
       display: flex;
@@ -70,8 +66,9 @@
     .card:hover {
       transform: translateY(-10px);
     }
-    .card h2 {
+    .card h3 {
       color: #2980b9;
+      font-size: 24px;
     }
     .btn {
       display: inline-block;
@@ -81,13 +78,64 @@
       color: white;
       text-decoration: none;
       border-radius: 5px;
+      font-weight: bold;
     }
+
+    /* PRICE 區塊專屬樣式 */
+    .price-section {
+      background-color: #ebf5fb;
+      padding: 40px 20px;
+      border-radius: 15px;
+      margin: 60px 0 20px 0; /* 增加上方間距，與測驗區隔 */
+      text-align: left;
+    }
+    .price-section h2 {
+      text-align: center;
+      color: #2980b9;
+      margin-bottom: 30px;
+    }
+    .price-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 800px;
+      margin: auto;
+    }
+    .price-item {
+      display: flex;
+      align-items: center;
+      background: white;
+      padding: 15px 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .price-letter {
+      font-size: 36px;
+      font-weight: 900;
+      color: #3498db;
+      width: 50px;
+      margin-right: 20px;
+      flex-shrink: 0;
+    }
+    .price-content strong {
+      font-size: 18px;
+      display: block;
+      color: #2c3e50;
+    }
+    .price-content span {
+      font-size: 15px;
+      color: #7f8c8d;
+    }
+
     footer {
       background-color: #eee;
       text-align: center;
       padding: 20px;
       font-size: 14px;
       color: #777;
+    }
+    section {
+      margin-bottom: 60px;
     }
   </style>
 </head>
@@ -107,7 +155,7 @@
   <main>
     <section>
       <h2>網站介紹</h2>
-      <p>本網站主要介紹「籃球」與「排球」兩項運動，提供常見運動傷害的介紹、預防方法、傷後處理建議，並設計互動式問卷幫助你檢視自己的知識與觀念。</p>
+      <p style="font-size: 18px; line-height: 1.6;">本網站主要介紹「籃球」與「排球」兩項運動，提供常見運動傷害的介紹、預防方法、傷後處理建議，並設計互動式問卷幫助你檢視自己的知識與觀念。</p>
     </section>
 
     <section>
@@ -116,20 +164,61 @@
         <div class="card">
           <h3>🏐 排球專區</h3>
           <p>了解排球運動中常見的傷害類型、預防技巧與正確處理方式。</p>
-          <a href="volleyball.html">進入排球專區 →</a>
+          <a href="volleyball.html" class="btn">進入排球專區 →</a>
         </div>
         <div class="card">
           <h3>🏀 籃球專區</h3>
           <p>探索籃球運動的高風險動作與如何避免受傷的實用建議。</p>
-          <a href="basketball.html">進入籃球專區 →</a>
+          <a href="basketball.html" class="btn">進入籃球專區 →</a>
         </div>
       </div>
     </section>
 
     <section>
       <h2>互動測驗</h2>
-      <p>透過問卷測驗檢視你對排球與籃球傷害預防的理解，看看你能答對幾題！</p>
-      <a href="quiz2.html">開始測驗 →</a>
+      <p style="font-size: 18px;">透過問卷測驗檢視你對排球與籃球傷害預防的理解，看看你能答對幾題！</p>
+      <a href="quiz2.html" class="btn" style="background-color: #2980b9; padding: 15px 30px;">開始測驗 →</a>
+    </section>
+
+    <section class="price-section">
+      <h2>急性運動傷害處理：PRICE 原則</h2>
+      <div class="price-grid">
+        <div class="price-item">
+          <div class="price-letter">P</div>
+          <div class="price-content">
+            <strong>Protection (保護患部)</strong>
+            <span>移除可能導致傷害的因素，並固定傷處，防止再次傷害使傷勢加劇。</span>
+          </div>
+        </div>
+        <div class="price-item">
+          <div class="price-letter">R</div>
+          <div class="price-content">
+            <strong>Rest (患部休息)</strong>
+            <span>停止運動並減少患部活動，盡量不要使用受傷部位做任何事，讓組織修復。</span>
+          </div>
+        </div>
+        <div class="price-item">
+          <div class="price-letter">I</div>
+          <div class="price-content">
+            <strong>Ice (冰敷患部)</strong>
+            <span>受傷後 48-72 小時內進行冰敷，幫助血管收縮以消腫止痛。</span>
+          </div>
+        </div>
+        <div class="price-item">
+          <div class="price-letter">C</div>
+          <div class="price-content">
+            <strong>Compression (壓迫患部)</strong>
+            <span>使用彈性繃帶適度加壓，減輕腫脹並保護受傷組織。</span>
+          </div>
+        </div>
+        <div class="price-item">
+          <div class="price-letter">E</div>
+          <div class="price-content">
+            <strong>Elevation (抬高患部)</strong>
+            <span>將患部抬高至超過心臟的高度，增加血液回流並減輕腫脹。</span>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
