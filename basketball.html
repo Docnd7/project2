@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>籃球專區｜傷害預防全攻略</title>
- <style>
+  <style>
     body {
       font-family: "Microsoft JhengHei", sans-serif;
       margin: 0;
@@ -91,6 +91,49 @@
       font-size: 14px;
       color: #777;
     }
+
+    /* 新增的傷害卡片與圖片排版樣式 */
+    .injury-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    @media (max-width: 768px) {
+      .injury-container {
+        grid-template-columns: 1fr;
+      }
+    }
+    .injury-card {
+      background: #fff;
+      border-left: 5px solid #e67e22;
+      padding: 20px;
+      border-radius: 4px 8px 8px 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      transition: transform 0.2s;
+    }
+    .injury-card:hover {
+      transform: translateY(-3px);
+    }
+    .injury-card h3 {
+      margin-top: 0;
+      color: #d35400;
+      font-size: 20px;
+    }
+    .injury-img-box {
+      margin: 15px 0 10px 0;
+      text-align: center;
+      background: #f5f5f5;
+      border-radius: 4px;
+      padding: 10px;
+    }
+    .injury-img-box img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+      display: block;
+      margin: 0 auto;
+    }
   </style>
 </head>
 <body>
@@ -108,14 +151,88 @@
 
   <main>
     <section>
-      <h2>常見傷害類型</h2>
-      <ul>
-        <li><strong>腳踝扭傷：</strong>落地踩到對手或地面不穩造成內翻扭傷</li>
-        <li><strong>膝蓋扭傷：</strong>切入或急停轉向時膝關節受力不當</li>
-        <li><strong>手腕拉傷：</strong>上籃或跌倒時手撐地造成拉傷</li>
-        <li><strong>跳躍膝：</strong>過度跳躍導致髕骨肌腱發炎</li>
-        <li><strong>下背痛：</strong>核心不足或姿勢不良導致慢性腰部壓力</li>
-      </ul>
+      <h2>🏀 籃球專項運動傷害百科</h2>
+      <p style="font-size: 17px; color: #555;">籃球包含大量的高速切入、急停變向與空中衝撞，以下是球場上最常見的幾種運動傷害：</p>
+      
+      <div class="injury-container">
+        <div class="injury-card">
+          <h3>1. 前十字韌帶撕裂 (ACL Tear)</h3>
+          <ul>
+            <li><strong>介紹：</strong> 位於膝關節內部，是維持關節穩定的重要韌帶。</li>
+            <li><strong>發生情境：</strong> 跳起落地時膝蓋內扣且旋轉、急停變向。</li>
+            <li><strong>關鍵：</strong> 常伴隨「啪」的斷裂聲，通常需要手術重建，是運動員的重大傷害。</li>
+          </ul>
+          <div class="injury-img-box">
+            <img src="images/acl_tear.png" alt="前十字韌帶撕裂示意圖" onerror="this.parentNode.style.display='none';">
+            <span style="font-size: 12px; color: #888;">（前十字韌帶撕裂示意圖預留處）</span>
+          </div>
+        </div>
+
+        <div class="injury-card">
+          <h3>2. 髂脛束症候群 (ITBS)</h3>
+          <ul>
+            <li><strong>介紹：</strong> 大腿外側的結締組織（髂脛束）與股骨外上髁過度摩擦。</li>
+            <li><strong>發生情境：</strong> 籃球員高頻率進行橫移防守步時最容易發生。</li>
+            <li><strong>關鍵：</strong> 痛點位於膝蓋外側。</li>
+          </ul>
+          <div class="injury-img-box">
+            <img src="images/itbs.png" alt="髂脛束症候群示意圖" onerror="this.parentNode.style.display='none';">
+            <span style="font-size: 12px; color: #888;">（髂脛束症候群示意圖預留處）</span>
+          </div>
+        </div>
+
+        <div class="injury-card">
+          <h3>3. 肩關節脫臼 (Shoulder Dislocation)</h3>
+          <ul>
+            <li><strong>介紹：</strong> 肱骨頭脫離肩胛骨關節盂。</li>
+            <li><strong>發生情境：</strong> 籃球搶球時手被強行拉扯、倒地救球手支撐地面。</li>
+            <li><strong>關鍵：</strong> 不可自行接回，需由專業醫師處理以防神經受損。</li>
+          </ul>
+          <div class="injury-img-box">
+            <img src="images/shoulder_dislocation.png" alt="肩關節脫臼示意圖" onerror="this.parentNode.style.display='none';">
+            <span style="font-size: 12px; color: #888;">（肩關節脫臼示意圖預留處）</span>
+          </div>
+        </div>
+
+        <div class="injury-card">
+          <h3>4. 運動型疝氣 (Sports Hernia)</h3>
+          <ul>
+            <li><strong>介紹：</strong> 並非真正的腸子脫出，而是腹股溝區域的肌肉或韌帶撕裂。</li>
+            <li><strong>發生情境：</strong> 籃球員高強度的切入、急停、大跨步防守，對骨盆周邊產生巨大的剪力。</li>
+            <li><strong>關鍵：</strong> 腹股溝（大腿根部）深處疼痛，咳嗽或用力時加劇。</li>
+          </ul>
+          <div class="injury-img-box">
+            <img src="images/sports_hernia.png" alt="運動型疝氣示意圖" onerror="this.parentNode.style.display='none';">
+            <span style="font-size: 12px; color: #888;">（運動型疝氣示意圖預留處）</span>
+          </div>
+        </div>
+
+        <div class="injury-card">
+          <h3>5. 指間關節挫傷 (吃蘿蔔乾)</h3>
+          <ul>
+            <li><strong>介紹：</strong> 手指關節遭受正面撞擊，導致關節囊或韌帶受損。</li>
+            <li><strong>發生情境：</strong> 搶籃板、防守抄球或接球不慎。</li>
+            <li><strong>關鍵：</strong> 應先冰敷排除骨折可能，再以鄰指固定。</li>
+          </ul>
+          <div class="injury-img-box">
+            <img src="images/finger_contusion.png" alt="吃蘿蔔乾示意圖" onerror="this.parentNode.style.display='none';">
+            <span style="font-size: 12px; color: #888;">（手指挫傷示意圖預留處）</span>
+          </div>
+        </div>
+
+        <div class="injury-card">
+          <h3>6. 踝關節扭傷 (Ankle Sprain)</h3>
+          <ul>
+            <li><strong>介紹：</strong> 足踝過度翻轉（常見內翻）導致韌帶拉傷或斷裂。</li>
+            <li><strong>發生情境：</strong> 搶籃板落地踩到別人的腳、切入防守時不慎踩空。</li>
+            <li><strong>關鍵：</strong> 依程度分為三級，三級為韌帶完全斷裂，需長期復健。</li>
+          </ul>
+          <div class="injury-img-box">
+            <img src="images/ankle_sprain.png" alt="踝關節扭傷示意圖" onerror="this.parentNode.style.display='none';">
+            <span style="font-size: 12px; color: #888;">（踝關節扭傷示意圖預留處）</span>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section>
